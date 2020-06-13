@@ -25,14 +25,14 @@ public class YatraSiteTestCase {
 		pgB.invokeBrowser("firefox");
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,description="Loading the site")
 	public void Loadsite() {
 
 		landingP = pgB.openApplication("sitename");
 		pgB.waitPageLoad();
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3,description="Logging in on the site")
 	public void login() {
 		loginP = landingP.clickLogin();
 
@@ -46,19 +46,21 @@ public class YatraSiteTestCase {
 		}
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 4,description="Searching the Cab")
 	public void searchCab()  {
 
 		cabBookingP = homeP.clickCab();
 		pgB.waitPageLoad();
 		cabListP = cabBookingP.searchCab();
+	}
+	@Test(priority=5,description="Writing into the excel file")
+	public void ExcelWrite() {
+		
 		cabListP.writeData();
-		
-		
-
+	
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 6,description="Closing the Browser")
 	public void QuitBrowser() {
 		try {
 			Thread.sleep(2000);
