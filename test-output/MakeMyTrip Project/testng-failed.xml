@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [MakeMyTrip Project]">
+  <test name="CabBooking">
+    <classes>
+      <class name="testcase.YatraSiteTestCase"/>
+    </classes>
+  </test> <!-- CabBooking -->
+  <test name="CabBooking(failed)">
+    <classes>
+      <class name="testcase.YatraSiteTestCase">
+        <methods>
+          <include name="login"/>
+          <include name="searchCab"/>
+          <include name="endReport"/>
+          <include name="Loadsite"/>
+        </methods>
+      </class> <!-- testcase.YatraSiteTestCase -->
+    </classes>
+  </test> <!-- CabBooking(failed) -->
+</suite> <!-- Failed suite [MakeMyTrip Project] -->
