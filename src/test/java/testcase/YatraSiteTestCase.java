@@ -21,7 +21,7 @@ public class YatraSiteTestCase {
 	
 	@Test(priority = 1,description="opens the browser")
 	public void BrowserSelection() {
-		pgB.logger = pgB.report.createTest("MakeMyTrip Cab Test");		//creating report
+		pgB.logger = pgB.report.createTest("Yatra Site Cab Test");		//creating report
 		pgB.invokeBrowser("firefox");
 	}
 
