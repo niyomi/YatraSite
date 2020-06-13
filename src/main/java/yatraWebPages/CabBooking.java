@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 //import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,17 +28,25 @@ public class CabBooking extends PageBaseClass {
 		WebElement ele = getElement("fromCity_Xpath");
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", ele);
-
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		elementClick("DelhiSelect_Xpath");
 
 		enterText("toCity_Xpath", "ToCity");
 
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
-				"/html/body/div/div/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/div/div/div/div/ul/li[1]/div/p")));
+				"/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[3]/li[3]/div[1]/div[1]/ul[1]/div[1]/div[1]/div[1]/li[1]")));
 		elementClick("ManaliSelect_Xpath");
 
 		elementClick("pickupDate_Xpath");
+		EventFiringWebDriver event = new EventFiringWebDriver(driver);
+		event.executeScript("document.querySelector('#monthWrapper').scrollTop = 450");
 		elementClick("date_Xpath");
 		
 
@@ -46,8 +55,8 @@ public class CabBooking extends PageBaseClass {
 				"document.querySelector('#root > div > div.minContainer > div > div > div.csw.outstationOneway.widgetOpen > div > div.csw_inputBox.timePicker.inactiveWidget.activeWidget > ul').scrollTop = 450");*/
 		elementClick("pickupTime_Xpath");
 		elementClick("time_Xpath");
-
-		elementClick("searchCabBtn");
+		
+		elementClick("searchCabBtn_Xpath");
 
 		return PageFactory.initElements(driver, CabList.class);
 	}

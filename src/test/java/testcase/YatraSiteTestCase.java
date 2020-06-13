@@ -52,6 +52,7 @@ public class YatraSiteTestCase {
 		cabBookingP = homeP.clickCab();
 		pgB.waitPageLoad();
 		cabListP = cabBookingP.searchCab();
+		cabListP.writeData();
 		
 		
 

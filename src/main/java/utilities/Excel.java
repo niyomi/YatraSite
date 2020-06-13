@@ -29,11 +29,11 @@ public class Excel {
 		XSSFSheet sheet = wb.createSheet(sheetName);			//creating sheet in that workbook with given sheet name
 		
 		Map<String,Object[]> dataSet = new TreeMap<String, Object[]>();
-		dataSet.put("1", new Object[] {"Cab Type","Price"});					//inputting data to write in excel
-		dataSet.put("2", new Object[] {data[0][0],data[0][1]});
-		dataSet.put("3", new Object[] {data[1][0],data[1][1]});
-		dataSet.put("4", new Object[] {data[2][0],data[2][1]});
-		dataSet.put("5", new Object[] {data[3][0],data[3][1]});
+		dataSet.put("1", new Object[] {"Vendor Name","Car Name", "Price"});					//inputting data to write in excel
+		dataSet.put("2", new Object[] {data[0][0],data[0][1],data[0][2]});
+		dataSet.put("3", new Object[] {data[1][0],data[1][1],data[1][2]});
+		dataSet.put("4", new Object[] {data[2][0],data[2][1],data[2][2]});
+		dataSet.put("5", new Object[] {data[3][0],data[3][1],data[3][2]});
 		//dataSet.put("6", new Object[] {data[4][0],data[4][1]});
 		
 		//Iterate over data
