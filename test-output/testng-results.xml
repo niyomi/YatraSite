@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="57788" started-at="2020-06-13T18:52:18Z" finished-at="2020-06-13T18:53:16Z">
+  <suite name="Default suite" duration-ms="66810" started-at="2020-06-14T11:02:55Z" finished-at="2020-06-14T11:04:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="57788" started-at="2020-06-13T18:52:18Z" finished-at="2020-06-13T18:53:16Z">
-      <class name="testcase.YatraSiteTestCase">
-        <test-method status="PASS" signature="BrowserSelection()[pri:1, instance:testcase.YatraSiteTestCase@42eca56e]" name="BrowserSelection" duration-ms="8185" started-at="2020-06-14T00:22:18Z" description="opens the browser" finished-at="2020-06-14T00:22:26Z">
+    <test name="Default test" duration-ms="66810" started-at="2020-06-14T11:02:55Z" finished-at="2020-06-14T11:04:02Z">
+      <class name="com.yatra.testCase.YatraSiteTestCase">
+        <test-method status="PASS" signature="BrowserSelection()[pri:1, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="BrowserSelection" duration-ms="8143" started-at="2020-06-14T16:32:55Z" description="opens the browser" finished-at="2020-06-14T16:33:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="Loadsite()[pri:2, instance:testcase.YatraSiteTestCase@42eca56e]" name="Loadsite" duration-ms="14961" started-at="2020-06-14T00:22:26Z" finished-at="2020-06-14T00:22:41Z">
+        <test-method status="PASS" signature="Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="Loadsite" duration-ms="14057" started-at="2020-06-14T16:33:03Z" description="Loading the site" finished-at="2020-06-14T16:33:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Loadsite -->
-        <test-method status="PASS" signature="login()[pri:3, instance:testcase.YatraSiteTestCase@42eca56e]" name="login" duration-ms="10548" started-at="2020-06-14T00:22:41Z" finished-at="2020-06-14T00:22:51Z">
+        <test-method status="PASS" signature="login()[pri:3, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="login" duration-ms="12148" started-at="2020-06-14T16:33:17Z" description="Logging in on the site" finished-at="2020-06-14T16:33:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="searchCab()[pri:4, instance:testcase.YatraSiteTestCase@42eca56e]" name="searchCab" duration-ms="13035" started-at="2020-06-14T00:22:51Z" finished-at="2020-06-14T00:23:05Z">
+        <test-method status="PASS" signature="searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="searchCab" duration-ms="12184" started-at="2020-06-14T16:33:29Z" description="Searching the Cab" finished-at="2020-06-14T16:33:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchCab -->
-        <test-method status="PASS" signature="QuitBrowser()[pri:5, instance:testcase.YatraSiteTestCase@42eca56e]" name="QuitBrowser" duration-ms="10670" started-at="2020-06-14T00:23:05Z" finished-at="2020-06-14T00:23:15Z">
+        <test-method status="PASS" signature="ExcelWrite()[pri:5, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="ExcelWrite" duration-ms="4514" started-at="2020-06-14T16:33:41Z" description="Writing into the excel file" finished-at="2020-06-14T16:33:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExcelWrite -->
+        <test-method status="PASS" signature="QuitBrowser()[pri:6, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="QuitBrowser" duration-ms="15403" started-at="2020-06-14T16:33:46Z" description="Closing the Browser" finished-at="2020-06-14T16:34:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QuitBrowser -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:testcase.YatraSiteTestCase@42eca56e]" name="endReport" is-config="true" duration-ms="358" started-at="2020-06-14T00:23:15Z" finished-at="2020-06-14T00:23:16Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteTestCase@42eca56e]" name="endReport" is-config="true" duration-ms="343" started-at="2020-06-14T16:34:01Z" finished-at="2020-06-14T16:34:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-      </class> <!-- testcase.YatraSiteTestCase -->
+      </class> <!-- com.yatra.testCase.YatraSiteTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

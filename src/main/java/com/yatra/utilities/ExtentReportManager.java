@@ -23,7 +23,7 @@ public class ExtentReportManager {
 			report.setSystemInfo("Environment", "UAT");
 
 			// to give info realted to HTML page
-			htmlReporter.config().setDocumentTitle("Project id 1");		//setting title of the webpage
+			htmlReporter.config().setDocumentTitle("Goup 1: onBoardElites");		//setting title of the webpage
 			htmlReporter.config().setReportName("Yatra site Report");	//setting title of the report
 			htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 			htmlReporter.config().setTimeStampFormat("MMM dd,yyyy hh:mm:ss a");	//date and time for the report created

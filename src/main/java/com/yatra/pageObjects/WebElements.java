@@ -53,7 +53,7 @@ public class WebElements {
 
 	//ReviewBooking Page
 	final String totalAmt_Xpath = "//span[contains(text(),'Total Amount')]";
-	totalPrice_Xpath = //span[contains(text(),'Total Amount')]
+	final String totalPrice_Xpath = "//span[contains(text(),'Total Amount')]";
 }
 
 }

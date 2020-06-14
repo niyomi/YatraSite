@@ -30,17 +30,32 @@ public class PageBaseClass {
 	SoftAssert softAssert = new SoftAssert();
 	public WebDriver driver;
 
+	/************************* Loading config.Properties File *************************/
+	public void propLoad() {
+		if (prop == null) {
+			prop = new Properties();
+			try {
+				FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\config.properties");
+				prop.load(file);
+			} catch (Exception e) {
+				reportFailure(e.getMessage());
+				e.printStackTrace();
+			}
+		}
+
+	}
 	/************************* Invoke Browser *************************/
 
 	public void invokeBrowser(String browserName) {
+		propLoad();
 		try {
 
-			if (browserName.equalsIgnoreCase("Chrome")) {
+			if (browserName.equalsIgnoreCase(prop.getProperty(browserName))) {
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 				driver = new ChromeDriver();
 
-			} else if (browserName.equalsIgnoreCase("Firefox")) {
+			} else if (browserName.equalsIgnoreCase(browserName)) {
 				System.setProperty("webdriver.gecko.driver",
 						System.getProperty("user.dir") + "\\drivers\\geckodriver.exe");
 				driver = new FirefoxDriver();
@@ -55,22 +70,11 @@ public class PageBaseClass {
 		
 	}
 
-	public void propLoad() {
-		if (prop == null) {
-			prop = new Properties();
-			try {
-				FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\config.properties");
-				prop.load(file);
-			} catch (Exception e) {
-				reportFailure(e.getMessage());
-				e.printStackTrace();
-			}
-		}
-
-	}
+	
 
 	/************************* Open Application *************************/
 	public LandingPage openApplication(String siteName) {
+		prop = null;
 		propLoad();
 		driver.get(prop.getProperty(siteName));
 		return PageFactory.initElements(driver, LandingPage.class);
@@ -128,7 +132,7 @@ public class PageBaseClass {
 				element = driver.findElement(By.id(prop.getProperty(locatorKey)));
 				
 			} else if (locatorKey.endsWith("_Xpath")) {
-				element = driver.findElement(By.xpath(locatorKey));
+				element = driver.findElement(By.xpath(prop.getProperty(locatorKey)));
 
 			} else if (locatorKey.endsWith("_Name")) {
 				element = driver.findElement(By.name(prop.getProperty(locatorKey)));
