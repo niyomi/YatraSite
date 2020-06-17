@@ -2,7 +2,6 @@ package com.yatra.webPages;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import com.yatra.baseClass.PageBaseClass;
