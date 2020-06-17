@@ -2,9 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Yatra Site Cab Booking Project">
 
-  <test name="CabBooking">
-    <classes>
-      <class name="com.yatra.testCase.YatraSiteTestCase"/>
-    </classes>
-  </test>
-</suite>
+	<test name="CabBookingSmoke">
+		<groups>
+			<run>
+				<include name="Smoke test"></include>
+				<include name = "Regression test"></include>
+				<include name = "Full Testing"></include>
+				
+			</run>
+		</groups>
+		<classes>
+			<class name="com.yatra.testCase.YatraSiteRegressionTest" />
+		</classes>
+	</test>
+	</suite>

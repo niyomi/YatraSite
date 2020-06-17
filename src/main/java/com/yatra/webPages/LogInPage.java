@@ -1,32 +1,44 @@
 package com.yatra.webPages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.Status;
 import com.yatra.baseClass.PageBaseClass;
+import com.yatra.pageObjects.PageLocators;
 
 
 public class LogInPage extends PageBaseClass {
+	PageLocators pageLocator;
 	public LogInPage(WebDriver driver) {
-		this.driver = driver;
+		PageBaseClass.driver = driver;
+		pageLocator= new PageLocators(driver);
+		PageFactory.initElements(driver, pageLocator);
 	}
 
 	public HomePage clickLoginExisting() {
+		propLoad();
 		
-		enterText("email_Xpath", "username");
-		elementClick("continueBtn_Xpath");
+		pageTitle("Yatra Account");
+		
+		logger.log(Status.INFO, "Entering Email Address");	
+		enterText(PageLocators.email, "username");
+		elementClick(PageLocators.continueBtn,"Continue Button Clicked");
 		waitPageLoad();
-		enterText("password_Xpath", "password");
+		
+		logger.log(Status.INFO, "Entering Password");
+		enterText(PageLocators.password, "password");
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		elementClick("loginBtn_Xpath");
+		
+		elementClick(PageLocators.loginBtn,"Login Button Clicked");
+		logger.log(Status.PASS, "Signin Successful");
+		
 		return PageFactory.initElements(driver, HomePage.class);
 
 	}

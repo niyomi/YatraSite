@@ -6,4 +6,16 @@
       <class name="com.yatra.testCase.YatraSiteTestCase"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.yatra.testCase.YatraSiteTestCase">
+        <methods>
+          <include name="endReport"/>
+          <include name="QuitBrowser"/>
+          <include name="BrowserSelection"/>
+          <include name="ExcelWrite"/>
+        </methods>
+      </class> <!-- com.yatra.testCase.YatraSiteTestCase -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

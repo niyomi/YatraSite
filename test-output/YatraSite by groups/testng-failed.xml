@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [YatraSite by groups]">
+  <test verbose="2" name="GRP-Smoke test">
+    <groups>
+      <run>
+        <include name="Smoke test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.yatra.testCase.YatraSiteRegressionTest"/>
+    </classes>
+  </test> <!-- GRP-Smoke test -->
+  <test name="GRP-Smoke test(failed)">
+    <groups>
+      <run>
+        <include name="Smoke test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.yatra.testCase.YatraSiteRegressionTest">
+        <methods>
+          <include name="Loadsite"/>
+          <include name="searchCabSmoke"/>
+        </methods>
+      </class> <!-- com.yatra.testCase.YatraSiteRegressionTest -->
+    </classes>
+  </test> <!-- GRP-Smoke test(failed) -->
+</suite> <!-- Failed suite [YatraSite by groups] -->

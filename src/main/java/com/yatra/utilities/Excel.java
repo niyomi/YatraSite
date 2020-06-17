@@ -1,80 +1,123 @@
 package com.yatra.utilities;
-import java.io.File;
-import java.io.FileNotFoundException;
+
+
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import com.yatra.baseClass.PageBaseClass;
 
-public class Excel {
-	
-	File file;
-	FileOutputStream fos=null;
 
-	public Excel(String path) throws FileNotFoundException
-	{
-		file=new File(path);					//assigning path to file
-		fos= new FileOutputStream(file);		//creating fileoutputstream object to write the file at given path
+public class Excel extends PageBaseClass {
+
+	public void writeCabInfo(String[][] info) throws IOException {
+
+		// opening workbook
+		XSSFWorkbook workbook = new XSSFWorkbook();
+		FileOutputStream fos = new FileOutputStream("Cab Details.xlsx");
+		XSSFSheet sheet = workbook.createSheet("List of Cabs");
+		XSSFSheet sheet1 = workbook.createSheet("Lowest price");
+
+		Row[] row = new Row[info.length + 1];
+		Cell[][] cell = new Cell[row.length][];
+
+		try {
+			setInfo(sheet, info, row, cell);
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		int r = findLowPrice(info);
+
+		try {
+			setInfo(sheet1, info, row, cell, r);
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		workbook.write(fos);
+		fos.close();
+		workbook.close();
+		System.out.println("File exported successfully");
+
 	}
-	
-	public void readData(String sheetName,String data[][]) throws IOException
-	{
-		XSSFWorkbook wb = new XSSFWorkbook();					//creating object of workbook(excel file)
-		XSSFSheet sheet = wb.createSheet(sheetName);			//creating sheet in that workbook with given sheet name
-		
-		Map<String,Object[]> dataSet = new TreeMap<String, Object[]>();
-		dataSet.put("1", new Object[] {"Vendor Name","Car Name", "Price"});					//inputting data to write in excel
-		dataSet.put("2", new Object[] {data[0][0],data[0][1],data[0][2]});
-		dataSet.put("3", new Object[] {data[1][0],data[1][1],data[1][2]});
-		dataSet.put("4", new Object[] {data[2][0],data[2][1],data[2][2]});
-		dataSet.put("5", new Object[] {data[3][0],data[3][1],data[3][2]});
-		//dataSet.put("6", new Object[] {data[4][0],data[4][1]});
-		
-		//Iterate over data
-		Set<String> set=dataSet.keySet();
-		int rowNum=0;
-		for(String key:set)
-		{
-			//Creating Row
-			Row row=sheet.createRow(rowNum++);
-			Object[] dataset = dataSet.get(key);
-			
-			int colNum=0;
-			for(Object value:dataset)
-			{
-				
-				//Creating Column
-				Cell cell=row.createCell(colNum++);
-				if(value instanceof String)
-				{
-					cell.setCellValue((String)value);		//entering value into cell
-				}
-				else if(value instanceof Integer)
-				{
-					cell.setCellValue((Integer)value);		//entering value into cell
-				}
+
+	public void setInfo(XSSFSheet sheet, String info[][], Row[] row, Cell[][] cell) {
+
+		setHeader(sheet, row, cell);
+		for (int i = 1; i < row.length; i++) {
+
+			row[i] = sheet.createRow(i);
+			cell[i] = new Cell[info[i - 1].length];
+
+			for (int j = 0; j < cell[i].length; j++) {
+				cell[i][j] = row[i].createCell(j);
+				if (j == 1) {
+					cell[i][j].setCellValue(info[i - 1][j].substring(1, info[i - 1][j].length() - 1));
+				} else
+					cell[i][j].setCellValue(info[i - 1][j]);
+
 			}
 		}
-		
-		//Write file on given path
-		try {
-			wb.write(fos);						//write into excel file
-			System.out.println("Excel File Created");
-			wb.close();
-			fos.close();			
-		}catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		
 
 	}
 
+	public void setInfo(XSSFSheet sheet, String info[][], Row[] row, Cell[][] cell, int r) {
+
+		setHeader(sheet, row, cell);
+		row[1] = sheet.createRow(1);
+		cell[1] = new Cell[info[r].length];
+
+		for (int j = 0; j < cell[1].length; j++) {
+			cell[1][j] = row[1].createCell(j);
+			if (j == 1) {
+				cell[1][j].setCellValue(info[r][j].substring(1, info[r][j].length() - 1));
+			} else
+				cell[1][j].setCellValue(info[r][j]);
+
+		}
+	}
+
+	public void setHeader(XSSFSheet sheet, Row[] row, Cell[][] cell) {
+		row[0] = sheet.createRow(0);
+		cell[0] = new Cell[3];
+
+		cell[0][0] = row[0].createCell(0);
+		cell[0][0].setCellValue("Vendor Name");
+
+		cell[0][1] = row[0].createCell(1);
+		cell[0][1].setCellValue("Car Name");
+
+		cell[0][2] = row[0].createCell(2);
+		cell[0][2].setCellValue("Price");
+	}
+
+	public int findLowPrice(String info[][]) {
+		int lp = 0, r = 0;
+
+		for (int i = 0; i < info.length; i++) {
+			String str = info[i][2].substring(1);
+			String str1[] = str.split(",");
+			String strPrice = str1[0] + str1[1];
+
+			if (i == 0) {
+				lp = Integer.parseInt(strPrice);
+
+				r = i;
+				continue;
+			}
+
+			if (lp > Integer.parseInt(strPrice)) {
+				lp = Integer.parseInt(strPrice);
+				r = i;
+			}
+
+		}
+		return r;
+	}
 }

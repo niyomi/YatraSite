@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 14 16:32:55 IST 2020</td>
+<td>Started on:</td><td>Wed Jun 17 15:45:59 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>66 seconds (66810 ms)</td>
+<tr><td>Total time:</td><td>68 seconds (68592 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,80 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.yatra.testCase.YatraSiteTestCase.ExcelWrite()'><b>ExcelWrite</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Writing into the excel file</td>
+<td><div><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(Unknown Source)
+	at com.yatra.utilities.Excel.findLowPrice(Excel.java:104)
+	at com.yatra.utilities.Excel.writeCabInfo(Excel.java:34)
+	at com.yatra.webPages.CabList.writeData(CabList.java:37)
+	at com.yatra.testCase.YatraSiteTestCase.ExcelWrite(YatraSiteTestCase.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1688310330", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1688310330'><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(Unknown Source)
+	at com.yatra.utilities.Excel.findLowPrice(Excel.java:104)
+	at com.yatra.utilities.Excel.writeCabInfo(Excel.java:34)
+	at com.yatra.webPages.CabList.writeData(CabList.java:37)
+	at com.yatra.testCase.YatraSiteTestCase.ExcelWrite(YatraSiteTestCase.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>0</td>
+<td>com.yatra.testCase.YatraSiteTestCase@b7dd107</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,35 +149,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.BrowserSelection()'><b>BrowserSelection</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: opens the browser</td>
-<td></td>
-<td>8</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-<tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.ExcelWrite()'><b>ExcelWrite</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Writing into the excel file</td>
-<td></td>
-<td>4</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-<tr>
 <td title='com.yatra.testCase.YatraSiteTestCase.Loadsite()'><b>Loadsite</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Loading the site</td>
 <td></td>
 <td>14</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-<tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.QuitBrowser()'><b>QuitBrowser</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Closing the Browser</td>
-<td></td>
-<td>15</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>com.yatra.testCase.YatraSiteTestCase@b7dd107</td></tr>
 <tr>
 <td title='com.yatra.testCase.YatraSiteTestCase.login()'><b>login</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Logging in on the site</td>
 <td></td>
-<td>12</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>10</td>
+<td>com.yatra.testCase.YatraSiteTestCase@b7dd107</td></tr>
 <tr>
 <td title='com.yatra.testCase.YatraSiteTestCase.searchCab()'><b>searchCab</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Searching the Cab</td>
 <td></td>
-<td>12</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>15</td>
+<td>com.yatra.testCase.YatraSiteTestCase@b7dd107</td></tr>
 </table><p>
 </body>
 </html>

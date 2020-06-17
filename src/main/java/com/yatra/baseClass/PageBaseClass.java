@@ -3,8 +3,6 @@ package com.yatra.baseClass;
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,9 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.asserts.SoftAssert;
-
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -27,8 +24,7 @@ public class PageBaseClass {
 	public Properties prop;
 	public ExtentReports report = ExtentReportManager.getReportInstance();
 	public static ExtentTest logger;
-	SoftAssert softAssert = new SoftAssert();
-	public WebDriver driver;
+	public static  WebDriver driver;
 
 	/************************* Loading config.Properties File *************************/
 	public void propLoad() {
@@ -50,21 +46,21 @@ public class PageBaseClass {
 		propLoad();
 		try {
 
-			if (browserName.equalsIgnoreCase(prop.getProperty(browserName))) {
+			if ("Chrome".equalsIgnoreCase(prop.getProperty(browserName))) {
 				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+						System.getProperty("user.dir") + prop.getProperty("chromePath"));
 				driver = new ChromeDriver();
 
-			} else if (browserName.equalsIgnoreCase(browserName)) {
+			} else if ("Firefox".equalsIgnoreCase(prop.getProperty(browserName))) {
 				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "\\drivers\\geckodriver.exe");
+						System.getProperty("user.dir") + prop.getProperty("FirefoxPath"));
 				driver = new FirefoxDriver();
 			}
 		} catch (Exception e) {
 			reportFailure(e.getMessage());
 		}
 
-		driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		// driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		
@@ -76,97 +72,63 @@ public class PageBaseClass {
 	public LandingPage openApplication(String siteName) {
 		prop = null;
 		propLoad();
+		logger.log(Status.INFO, "Opening  Website: "+prop.getProperty(siteName));
 		driver.get(prop.getProperty(siteName));
+		logger.log(Status.PASS, "Successfully Opened the Website "+prop.getProperty(siteName));
 		return PageFactory.initElements(driver, LandingPage.class);
 	}
 
 	/************************* Get Page Title *************************/
 	public void pageTitle(String expected) {
-		waitPageLoad();
-		Assert.assertEquals(driver.getTitle(), expected);
-	}
-
-	/************************* CLose browser *************************/
-	public void closeBrowser() {
-		driver.close();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Assert.assertEquals(driver.getTitle(), expected);			
+			//logger.log(Status.PASS, "Successfully Checked the Title: "+expected);
+			logger.log(Status.INFO,driver.getTitle() + " Title Found.");
 	}
 
 	/************************* Quit Browser *************************/
+	
 	public void quitBrowser() {
-		driver.quit();
+		
+		logger.log(Status.INFO,"Quitting Browser");
+		driver.quit();		
 	}
-
+	
 	/*************************
 	 * Enter the text in text fields
 	 *************************/
-	public void enterText(String xpathKey, String data) {
+	public void enterText(WebElement xpathKey, String data) {
 		try {
 
-			getElement(xpathKey).sendKeys(prop.getProperty(data));
-			reportPass(data + " - Entered successfully in locator Element : " + xpathKey);
+			//getElement(xpathKey)
+			xpathKey.sendKeys(prop.getProperty(data));
+			reportPass(data + " - Entered successfully");
 		} catch (Exception e) {
 			reportFailure(e.getMessage());
 		}
 	}
 
 	/************************* To click the element *************************/
-	public void elementClick(String xpathKey) {
-		try {
-			WebElement c = getElement(xpathKey);
-			c.click();			
-			reportPass(xpathKey + " Identified Successfully");
+	public void elementClick(WebElement element,String msg) {
+			try {
+			
+			element.click();
+			//Thread.sleep(2000);
+			reportPass(msg+" Successfully");
 		} catch (Exception e) {
 			reportFailure(e.getMessage());
 		}
 	}
 
-	/*************************
-	 * To identify the web element
-	 *************************/
-	public WebElement getElement(String locatorKey) {
-		WebElement element = null;
-		prop = null;
-		propLoad();
-		try {
-			if (locatorKey.endsWith("_Id")) {
-				element = driver.findElement(By.id(prop.getProperty(locatorKey)));
-				
-			} else if (locatorKey.endsWith("_Xpath")) {
-				element = driver.findElement(By.xpath(prop.getProperty(locatorKey)));
-
-			} else if (locatorKey.endsWith("_Name")) {
-				element = driver.findElement(By.name(prop.getProperty(locatorKey)));
-
-			} else if (locatorKey.endsWith("_LinkText")) {
-				element = driver.findElement(By.linkText(prop.getProperty(locatorKey)));
-
-			} else if (locatorKey.endsWith("_CSS")) {
-				element = driver.findElement(By.cssSelector(prop.getProperty(locatorKey)));
-
-			} else if (locatorKey.endsWith("_Class")) {
-				element = driver.findElement(By.className(prop.getProperty(locatorKey)));
-
-			} else {
-				reportFailure("Failing Test case,Invalid Locator: " + locatorKey);
-				Assert.fail("Failing Test case,Invalid Locator: " + locatorKey);
-			}
-		} catch (Exception e) {
-			// Fail the TestCase and Report the error
-			reportFailure(e.getMessage());
-			// e.printStackTrace();
-		}
-
-		return element;
-	}
-
+	
 	/************************* To select value *************************/
-	public void selectElement(String locaterKey, String value) {
+	public void selectElement(WebElement element, String value) {
 		try {
-			WebElement ele = getElement(locaterKey);
+			//WebElement ele = getElement(locaterKey);
 			Thread.sleep(2000);
-			Select sel = new Select(ele);
+			Select sel = new Select(element);
 			sel.selectByVisibleText(prop.getProperty(value));
-			reportPass(locaterKey + " Identified Successfully");
+			reportPass(element + " Identified Successfully");
 			logger.log(Status.INFO, "Selected the Defined Value : " + value);
 		} catch (Exception e) {
 			reportFailure(e.getMessage());
@@ -174,21 +136,19 @@ public class PageBaseClass {
 	}
 
 	/************************* To get Text of element *************************/
-	public String text(String locaterKey) {
-		propLoad();
-		WebElement ele = null;
+	public String text(WebElement ele) {
+		String txt="";
 		try {
-			ele = getElement(locaterKey);
-			//logger.log(Status.INFO, "Found the Defined Value : " + locaterKey);
+			txt = ele.getText();
 		} catch (Exception e) {
 			reportFailure(e.getMessage());
 		}
-		return ele.getText();
+		return txt;
 	}
 
 	/************************* PageLoad Wait *************************/
 	public void waitPageLoad() {
-		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
 	/************************* Reporting Functions *************************/
@@ -199,16 +159,13 @@ public class PageBaseClass {
 	}
 
 	public void reportPass(String msg) {
+		
 		ScreenShotClass.takeScrennshotOnFailure(driver); //calling function to take screenshot from ScreenShotClass
 		logger.log(Status.PASS, msg);
 	}
 
-	
-	 @AfterMethod 
-	 public void afterTest()
-	 { 
-		 softAssert.assertAll(); driver.quit();
-	 }
+
+	 
 	 
 
 }

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Yatra Site Cab Booking Project]">
+  <test name="CabBookingSmoke">
+    <groups>
+      <run>
+        <include name="Smoke test"/>
+        <include name="Regression test"/>
+        <include name="Full Testing"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.yatra.testCase.YatraSiteTestCase"/>
+      <class name="com.yatra.testCase.YatraSiteRegressionTest"/>
     </classes>
-  </test> <!-- Default test -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- CabBookingSmoke -->
+</suite> <!-- Failed suite [Yatra Site Cab Booking Project] -->

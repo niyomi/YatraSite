@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Yatra Site Cab Booking Project]">
-  <test name="CabBooking">
+  <test name="CabBookingSmoke">
+    <groups>
+      <run>
+        <include name="Smoke test"/>
+        <include name="Regression test"/>
+        <include name="Full Testing"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.yatra.testCase.YatraSiteTestCase"/>
+      <class name="com.yatra.testCase.YatraSiteRegressionTest"/>
     </classes>
-  </test> <!-- CabBooking -->
-  <test name="CabBooking(failed)">
-    <classes>
-      <class name="com.yatra.testCase.YatraSiteTestCase">
-        <methods>
-          <include name="searchCab"/>
-          <include name="endReport"/>
-          <include name="login"/>
-          <include name="ExcelWrite"/>
-        </methods>
-      </class> <!-- com.yatra.testCase.YatraSiteTestCase -->
-    </classes>
-  </test> <!-- CabBooking(failed) -->
+  </test> <!-- CabBookingSmoke -->
 </suite> <!-- Failed suite [Yatra Site Cab Booking Project] -->

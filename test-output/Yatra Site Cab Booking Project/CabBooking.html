@@ -55,151 +55,18 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CabBooking</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 14 16:17:15 IST 2020</td>
+<td>Started on:</td><td>Wed Jun 17 00:11:19 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>212 seconds (212667 ms)</td>
+<tr><td>Total time:</td><td>58 seconds (58310 ms)</td>
 </tr><tr>
-<td>Included groups:</td><td></td>
+<td>Included groups:</td><td>Smoke test </td>
 </tr><tr>
 <td>Excluded groups:</td><td></td>
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.ExcelWrite()'><b>ExcelWrite</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Writing into the excel file</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.yatra.testCase.YatraSiteTestCase.ExcelWrite(YatraSiteTestCase.java:59)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace892335322", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace892335322'><pre>java.lang.NullPointerException
-	at com.yatra.testCase.YatraSiteTestCase.ExcelWrite(YatraSiteTestCase.java:59)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>0</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-<tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.login()'><b>login</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Logging in on the site</td>
-<td><div><pre>java.lang.AssertionError: Unable to locate element: myAccountDropDown_Xpath
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GODS5UC&apos;, ip: &apos;192.168.43.148&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 76.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200507114007, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 7184, moz:profile: C:\Users\Niyomi\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b031f629-9139-424d-ab10-af6629e53005
-*** Element info: {Using=xpath, value=myAccountDropDown_Xpath}
-	at com.yatra.baseClass.PageBaseClass.reportFailure(PageBaseClass.java:198)
-	at com.yatra.baseClass.PageBaseClass.getElement(PageBaseClass.java:155)
-	at com.yatra.baseClass.PageBaseClass.elementClick(PageBaseClass.java:115)
-	at com.yatra.webPages.LandingPage.clickLogin(LandingPage.java:17)
-	at com.yatra.testCase.YatraSiteTestCase.login(YatraSiteTestCase.java:37)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1856158867", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1856158867'><pre>java.lang.AssertionError: Unable to locate element: myAccountDropDown_Xpath
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GODS5UC&apos;, ip: &apos;192.168.43.148&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 76.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200507114007, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 7184, moz:profile: C:\Users\Niyomi\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b031f629-9139-424d-ab10-af6629e53005
-*** Element info: {Using=xpath, value=myAccountDropDown_Xpath}
-	at org.testng.Assert.fail(Assert.java:94)
-	at com.yatra.baseClass.PageBaseClass.reportFailure(PageBaseClass.java:198)
-	at com.yatra.baseClass.PageBaseClass.getElement(PageBaseClass.java:155)
-	at com.yatra.baseClass.PageBaseClass.elementClick(PageBaseClass.java:115)
-	at com.yatra.webPages.LandingPage.clickLogin(LandingPage.java:17)
-	at com.yatra.testCase.YatraSiteTestCase.login(YatraSiteTestCase.java:37)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>180</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-<tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.searchCab()'><b>searchCab</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Searching the Cab</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.yatra.testCase.YatraSiteTestCase.searchCab(YatraSiteTestCase.java:52)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace258112787", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace258112787'><pre>java.lang.NullPointerException
-	at com.yatra.testCase.YatraSiteTestCase.searchCab(YatraSiteTestCase.java:52)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>0</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -208,20 +75,25 @@ Session ID: b031f629-9139-424d-ab10-af6629e53005
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.BrowserSelection()'><b>BrowserSelection</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: opens the browser</td>
+<td title='com.yatra.testCase.YatraSiteRegressionTest.BrowserSelection()'><b>BrowserSelection</b><br>Test class: com.yatra.testCase.YatraSiteRegressionTest<br>Test method: opens the browser</td>
 <td></td>
-<td>8</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>7</td>
+<td>com.yatra.testCase.YatraSiteRegressionTest@37374a5e</td></tr>
 <tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.Loadsite()'><b>Loadsite</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Loading the site</td>
+<td title='com.yatra.testCase.YatraSiteRegressionTest.Loadsite()'><b>Loadsite</b><br>Test class: com.yatra.testCase.YatraSiteRegressionTest<br>Test method: Loading the site</td>
 <td></td>
-<td>18</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>14</td>
+<td>com.yatra.testCase.YatraSiteRegressionTest@37374a5e</td></tr>
 <tr>
-<td title='com.yatra.testCase.YatraSiteTestCase.QuitBrowser()'><b>QuitBrowser</b><br>Test class: com.yatra.testCase.YatraSiteTestCase<br>Test method: Closing the Browser</td>
+<td title='com.yatra.testCase.YatraSiteRegressionTest.QuitBrowser()'><b>QuitBrowser</b><br>Test class: com.yatra.testCase.YatraSiteRegressionTest<br>Test method: Closing the Browser</td>
 <td></td>
-<td>4</td>
-<td>com.yatra.testCase.YatraSiteTestCase@42eca56e</td></tr>
+<td>5</td>
+<td>com.yatra.testCase.YatraSiteRegressionTest@37374a5e</td></tr>
+<tr>
+<td title='com.yatra.testCase.YatraSiteRegressionTest.searchCabSmoke()'><b>searchCabSmoke</b><br>Test class: com.yatra.testCase.YatraSiteRegressionTest<br>Test method: Searching the Cab</td>
+<td></td>
+<td>29</td>
+<td>com.yatra.testCase.YatraSiteRegressionTest@37374a5e</td></tr>
 </table><p>
 </body>
 </html>

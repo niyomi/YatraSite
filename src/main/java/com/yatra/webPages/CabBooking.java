@@ -1,63 +1,68 @@
 package com.yatra.webPages;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-//import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.Status;
 import com.yatra.baseClass.PageBaseClass;
+import com.yatra.pageObjects.PageLocators;
 import com.yatra.webPages.CabList;
 
 public class CabBooking extends PageBaseClass {
-
+	PageLocators pageLocator;
 	public CabBooking(WebDriver driver) {
-		this.driver = driver;
+		PageBaseClass.driver = driver;
+		pageLocator= new PageLocators(driver);
+		PageFactory.initElements(driver, pageLocator);
 	}
 
 	public CabList searchCab() {
+		propLoad();			
 		
-		elementClick("outStationOneWayBtn_Xpath");
-		elementClick("fromCity_Xpath");
-		enterText("fromCity_Xpath", "fromCity");
-		WebElement ele = getElement("fromCity_Xpath");
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", ele);
+		pageTitle("Online Cab Booking with Latest Offers on Car Rental, Outstation Cabs, Airport Transfers");
+		elementClick(PageLocators.outStationOneWayBtn,"Outstation Radio Button Clicked");		
+		elementClick(PageLocators.fromCity,"From City TextBox Clicked");		
+		logger.log(Status.INFO,"Entering From City Name");
+		enterText(PageLocators.fromCity, "FromCity");				
 		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		elementClick("DelhiSelect_Xpath");
-
-		enterText("toCity_Xpath", "ToCity");
-
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
-				"/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[3]/li[3]/div[1]/div[1]/ul[1]/div[1]/div[1]/div[1]/li[1]")));
-		elementClick("ManaliSelect_Xpath");
-
-		elementClick("pickupDate_Xpath");
+		
+		elementClick(PageLocators.DelhiSelect,"Delhi Selected");		
+		logger.log(Status.INFO,"Entering To City Name");
+		enterText(PageLocators.toCity, "ToCity");		
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		elementClick(PageLocators.ManaliSelect,"Manali Selected");	
+		elementClick(PageLocators.pickupDate,"pickupDate Clicked");		
 		EventFiringWebDriver event = new EventFiringWebDriver(driver);
-		event.executeScript("document.querySelector('#monthWrapper').scrollTop = 450");
-		elementClick("date_Xpath");
+		event.executeScript("document.querySelector('#monthWrapper').scrollTop = 450");		
+		elementClick(PageLocators.date,"Date Selected");		
+		elementClick(PageLocators.pickupTime,"PickupTime Clicked");	
+		elementClick(PageLocators.time,"Time Selected");		
+		elementClick(PageLocators.searchCabBtn,"Search Cab Button Clicked");
 		
-
-		/*EventFiringWebDriver event = new EventFiringWebDriver(driver);
-		event.executeScript(
-				"document.querySelector('#root > div > div.minContainer > div > div > div.csw.outstationOneway.widgetOpen > div > div.csw_inputBox.timePicker.inactiveWidget.activeWidget > ul').scrollTop = 450");*/
-		elementClick("pickupTime_Xpath");
-		elementClick("time_Xpath");
+		WebDriverWait expwait = new WebDriverWait(driver, 2);
+		expwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body/div[@id='root']/div/div[6]")));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,800)");
+		elementClick(PageLocators.showMoreBtn, "Show More Vendors Button Clicked");
+		reportPass("SUV Cabs Found");
 		
-		elementClick("searchCabBtn_Xpath");
-
 		return PageFactory.initElements(driver, CabList.class);
 	}
 
