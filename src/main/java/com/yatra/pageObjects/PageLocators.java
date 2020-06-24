@@ -76,15 +76,15 @@ public class PageLocators extends PageBaseClass {
 	@FindBy(xpath = "//h2[contains(text(),'SUV')]")
 	public static WebElement suv;
 
-	@FindBy(xpath = "//div[6]//div[1]//div[2]//div[5]")
+	@FindBy(xpath = "//div[6]//div[1]//div[2]//div[6]")
 	public static WebElement showMoreBtn;
 
 	@FindBy(xpath = "//div[@class='right-module showVendor']//div[1]//div[3]//div[1]")
 	public static WebElement bookNowBtn;
 
-	public static WebElement[] vendorarr = new WebElement[4];
-	public static WebElement[] cabnamearr = new WebElement[4];
-	public static WebElement[] cabpricearr = new WebElement[4];
+	public static WebElement[] vendorarr = new WebElement[5];
+	public static WebElement[] cabnamearr = new WebElement[5];
+	public static WebElement[] cabpricearr = new WebElement[5];
 
 	// ReviewBooking Page
 	@FindBy(xpath = "//span[contains(text(),'Total Amount')]")
@@ -94,7 +94,7 @@ public class PageLocators extends PageBaseClass {
 	public static WebElement totalPrice;
 
 	public static void cab() {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			vendorarr[i] = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[" + (i + 1) + "]/div[1]/div[1]/h2[1]"));
 			cabnamearr[i] = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[" + (i + 1) + "]/div[1]/div[1]/span[1]"));
 			cabpricearr[i] = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[" + (i + 1) + "]/div[1]/button[1]"));

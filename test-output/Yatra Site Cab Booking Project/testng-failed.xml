@@ -4,9 +4,7 @@
   <test name="CabBookingSmoke">
     <groups>
       <run>
-        <include name="Smoke test"/>
         <include name="Regression test"/>
-        <include name="Full Testing"/>
       </run>
     </groups>
     <classes>

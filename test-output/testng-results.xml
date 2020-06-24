@@ -1,64 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Yatra Site Cab Booking Project" duration-ms="66709" started-at="2020-06-17T12:08:51Z" finished-at="2020-06-17T12:09:57Z">
+  <suite name="Yatra Site Cab Booking Project" duration-ms="62602" started-at="2020-06-20T11:52:11Z" finished-at="2020-06-20T11:53:14Z">
     <groups>
       <group name="Smoke test">
-        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
       </group> <!-- Smoke test -->
       <group name="Full Testing">
-        <method signature="YatraSiteRegressionTest.ExcelWrite()[pri:5, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="ExcelWrite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="login" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="login" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
       </group> <!-- Full Testing -->
       <group name="Regression test">
-        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="login" class="com.yatra.testCase.YatraSiteRegressionTest"/>
-        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="Loadsite" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="login" class="com.yatra.testCase.YatraSiteRegressionTest"/>
+        <method signature="YatraSiteRegressionTest.searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="searchCab" class="com.yatra.testCase.YatraSiteRegressionTest"/>
       </group> <!-- Regression test -->
     </groups>
-    <test name="CabBookingSmoke" duration-ms="66709" started-at="2020-06-17T12:08:51Z" finished-at="2020-06-17T12:09:57Z">
+    <test name="CabBookingSmoke" duration-ms="62602" started-at="2020-06-20T11:52:11Z" finished-at="2020-06-20T11:53:14Z">
       <class name="com.yatra.testCase.YatraSiteRegressionTest">
-        <test-method status="PASS" signature="BrowserSelection()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="BrowserSelection" is-config="true" duration-ms="9179" started-at="2020-06-17T17:38:51Z" finished-at="2020-06-17T17:39:00Z">
+        <test-method status="PASS" signature="BrowserSelection()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="BrowserSelection" is-config="true" duration-ms="7637" started-at="2020-06-20T17:22:11Z" finished-at="2020-06-20T17:22:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="Loadsite" duration-ms="11949" started-at="2020-06-17T17:39:00Z" description="Loading the site" finished-at="2020-06-17T17:39:12Z">
+        <test-method status="PASS" signature="Loadsite()[pri:2, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="Loadsite" duration-ms="13147" started-at="2020-06-20T17:22:19Z" description="Loading the site" finished-at="2020-06-20T17:22:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Loadsite -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="endReport" is-config="true" duration-ms="759" started-at="2020-06-17T17:39:12Z" finished-at="2020-06-17T17:39:13Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="endReport" is-config="true" duration-ms="456" started-at="2020-06-20T17:22:32Z" finished-at="2020-06-20T17:22:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="login" duration-ms="11558" started-at="2020-06-17T17:39:13Z" description="Logging in on the site" finished-at="2020-06-17T17:39:24Z">
+        <test-method status="PASS" signature="login()[pri:3, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="login" duration-ms="10480" started-at="2020-06-20T17:22:32Z" description="Logging in on the site" finished-at="2020-06-20T17:22:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="endReport" is-config="true" duration-ms="107" started-at="2020-06-17T17:39:24Z" finished-at="2020-06-17T17:39:24Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="endReport" is-config="true" duration-ms="104" started-at="2020-06-20T17:22:43Z" finished-at="2020-06-20T17:22:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="searchCab" duration-ms="22879" started-at="2020-06-17T17:39:24Z" description="Searching the Cab" finished-at="2020-06-17T17:39:47Z">
+        <test-method status="PASS" signature="searchCab()[pri:4, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="searchCab" duration-ms="20290" started-at="2020-06-20T17:22:43Z" description="Searching the Cab" finished-at="2020-06-20T17:23:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchCab -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="endReport" is-config="true" duration-ms="69" started-at="2020-06-17T17:39:47Z" finished-at="2020-06-17T17:39:47Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="endReport" is-config="true" duration-ms="56" started-at="2020-06-20T17:23:03Z" finished-at="2020-06-20T17:23:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="ExcelWrite()[pri:5, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="ExcelWrite" duration-ms="1529" started-at="2020-06-17T17:39:47Z" description="Writing into the excel file" finished-at="2020-06-17T17:39:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExcelWrite -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="endReport" is-config="true" duration-ms="53" started-at="2020-06-17T17:39:49Z" finished-at="2020-06-17T17:39:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="QuitBrowser()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@b7dd107]" name="QuitBrowser" is-config="true" duration-ms="8605" started-at="2020-06-17T17:39:49Z" finished-at="2020-06-17T17:39:57Z">
+        <test-method status="PASS" signature="QuitBrowser()[pri:0, instance:com.yatra.testCase.YatraSiteRegressionTest@4bb4de6a]" name="QuitBrowser" is-config="true" duration-ms="10408" started-at="2020-06-20T17:23:03Z" finished-at="2020-06-20T17:23:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QuitBrowser -->

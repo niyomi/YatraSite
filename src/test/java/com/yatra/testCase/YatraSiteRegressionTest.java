@@ -16,13 +16,14 @@ import com.yatra.webPages.LandingPage;
 import com.yatra.webPages.LogInPage;
 
 public class YatraSiteRegressionTest {
-	HomePage homeP;
+	
 	LogInPage loginP;
 	CabBooking cabBookingP;
 	CabList cabListP;
 	LandingPage landingP;
 	PageBaseClass pgB = new PageBaseClass();
 	WebDriver driver;
+	HomePage homeP = new HomePage(driver);
 	
 	
 	//@Test(priority = 1,description="Opening Browser",groups = {"Regression test","Smoke test","Full Testing"})
@@ -63,25 +64,13 @@ public class YatraSiteRegressionTest {
 		cabListP = cabBookingP.searchCab();
 	}
 	
-	/*@Test(priority = 4,description="Searching the Cab",groups = { "Smoke test"})
-	public void searchCabSmoke()  {
-		
-		HomePage homeP = new HomePage(driver);
-		cabBookingP = homeP.clickCab();
-		pgB.waitPageLoad();
-		cabListP = cabBookingP.searchCab();
-	}*/
-	
+
 	@Test(priority=5,description="Writing into the excel file",groups = {"Full Testing"})
 	public void ExcelWrite() {
 		
 		cabListP.writeData();
 	
 	}
-	
-	//priority = 1,description="opens the browser", groups = {"Regression test","Smoke test","Full Testing"}
-
-	//@Test(priority = 6,description="Opening Browser",groups = {"Regression test","Smoke test","Full Testing"})
 	
 	@AfterTest(alwaysRun=true)
 	public void QuitBrowser() {

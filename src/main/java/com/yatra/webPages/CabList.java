@@ -23,9 +23,9 @@ public class CabList extends PageBaseClass {
 		
 
 		PageLocators.cab();
-		String cabDetails[][] = new String[4][3]; // creating string array to store list of cabs
+		String cabDetails[][] = new String[5][3]; // creating string array to store list of cabs
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			cabDetails[i][0] = text(PageLocators.vendorarr[i]); // assigning vendor name
 			cabDetails[i][1] = text(PageLocators.cabnamearr[i]); // assign car name
 			cabDetails[i][2] = text(PageLocators.cabpricearr[i]); // assigning cab Price

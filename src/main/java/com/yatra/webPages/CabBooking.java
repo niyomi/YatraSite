@@ -24,11 +24,19 @@ public class CabBooking extends PageBaseClass {
 
 	public CabList searchCab() {
 		propLoad();			
-		
+		waitPageLoad();
 		pageTitle("Online Cab Booking with Latest Offers on Car Rental, Outstation Cabs, Airport Transfers");
 		elementClick(PageLocators.outStationOneWayBtn,"Outstation Radio Button Clicked");		
 		elementClick(PageLocators.fromCity,"From City TextBox Clicked");		
 		logger.log(Status.INFO,"Entering From City Name");
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		enterText(PageLocators.fromCity, "FromCity");				
 		
 		try {
@@ -39,6 +47,14 @@ public class CabBooking extends PageBaseClass {
 		
 		elementClick(PageLocators.DelhiSelect,"Delhi Selected");		
 		logger.log(Status.INFO,"Entering To City Name");
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		enterText(PageLocators.toCity, "ToCity");		
 		
 		try {
@@ -59,7 +75,7 @@ public class CabBooking extends PageBaseClass {
 		WebDriverWait expwait = new WebDriverWait(driver, 2);
 		expwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body/div[@id='root']/div/div[6]")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,800)");
+		js.executeScript("window.scrollBy(0,850)");
 		elementClick(PageLocators.showMoreBtn, "Show More Vendors Button Clicked");
 		reportPass("SUV Cabs Found");
 		
